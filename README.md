@@ -1,4 +1,4 @@
-# eliteformR
+# eliteformR <img src="figures/ElieteformR.png" align="right" height="120"/>
 
 [![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions)
 
