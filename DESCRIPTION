@@ -1,18 +1,21 @@
 Package: eliteformR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: eliteformR
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Matthew", "Wilcox",
+      email = "matthewleewilcox@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: R Package that acts as an api wrapper for Elite Form API. This package allows for user's to create custom applications and dashboards easier. 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/MatthewLeeWilcox/eliteformR
 BugReports: https://github.com/MatthewLeeWilcox/eliteformR/issues
+RoxygenNote: 7.3.2
+Imports: 
+    httr,
+    jsonlite
