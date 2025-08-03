@@ -1,0 +1,11 @@
+url: https://matthewleewilcox.github.io/eliteformR/
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    primary: "#0090ba"
+    secondary: "#ec008c"
+navbar:
+  structure:
+    left: [home, reference, articles, news]
+    right: [github]
