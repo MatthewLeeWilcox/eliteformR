@@ -1,48 +1,42 @@
 url: https://matthewleewilcox.github.io/eliteformR/
 # _pkgdown.yml
 
+
+# 2. Appearance settings
+template:
+  bootstrap: 5
+  bootswatch: darkly  # or cosmo, darkly, etc.
+  bslib:
+    primary: "#6ab2d9"
+    secondary: "#c95c97"
+
+
+# 3. Navbar links
+navbar:
+  structure:
+    left: [home,search, reference, news]
+    right: [github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/MatthewLeeWilcox/eliteformR
+
 # 1. Website title and URL
 home:
   title: eliteformR
   sidebar:
     structure: [links, license]
-# 2. Appearance settings
-template:
-  bootstrap: 5
-  bootswatch: flatly  # or cosmo, darkly, etc.
-  bslib:
-    primary: "#0090ba"
-    secondary: "#ec008c"
 
-# 3. Navbar links
-navbar:
-  structure:
-    left: [home, reference, articles, news]
-    right: [github]
-  components:
-    github:
-      icon: fa-github
-      href: https://github.com/yourusername/eliteformR
-
-# 4. Reference structure (custom groupings)
-reference:
-  - title: "Main Functions"
-    desc: "Key functions for using EliteForm API"
-    contents:
-      - EF_CreateAPIToken
-      - EF_GetAllTrackedReps
-  - title: "Helpers"
-    contents:
-      - matches("^EF_")
-
-# 5. Articles
-articles:
-  - title: "Getting Started"
-    contents:
-      - intro
-  - title: "Use Cases"
-    contents:
-      - advanced-workflow
+# news:
+#   title: test
+# # 5. Articles
+# articles:
+#   - title: "Getting Started"
+#     contents:
+#       - intro
+#   - title: "Use Cases"
+#     contents:
+#       - advanced-workflow
 
 # 6. Include logo (if available)
 # Place logo.png in man/figures/

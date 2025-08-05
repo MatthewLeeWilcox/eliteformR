@@ -19,3 +19,7 @@ RoxygenNote: 7.3.2
 Imports: 
     httr,
     jsonlite
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

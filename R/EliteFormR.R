@@ -4,6 +4,14 @@
 #' @param url URL string
 #' @param api_key X-ApiKey string
 #' @return Returns a S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
+#' @examples
+#' # Create an API token with your EliteForm URL and API key
+#' token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
+#'
+#' # Access components of the token
+#' token@url
+#' token@api_key
+#'
 #' @export
 
 EF_CreateAPIToken <- function(url,api_key ){
@@ -19,9 +27,13 @@ EF_CreateAPIToken <- function(url,api_key ){
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
 #' @return A data frame with the following columns:
 #' \describe{
-#'   \item{TeamId}{`numeric` (long) — Unique identifier for the team}
-#'   \item{Name}{`character` (string) — Name of the team}
+#'   \item{TeamId}{`numeric` (long) — Team unique identifier}
+#'   \item{Name}{`character` (string) — Team Name}
 #' }
+#' @examples
+#' Download Team List
+#' Team_list <- EF_GetTeamsList(token)
+#'
 #' @export
 
 EF_GetTeamsList <- function(token){
@@ -39,8 +51,18 @@ EF_GetTeamsList <- function(token){
 #' Update the custom API Token to select the team to pull for the remainder of values
 #' Must be saved as the token values ie token <- EF_UpdateTokenTeam(token, 1)
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
-#' @param TEAM_ID Team Id referenced in EF_GetTeamsList (see \code{\link{EF_GetTeamsList}}
+#' @param TEAM_ID Team Id referenced in  \code{\link{EF_GetTeamsList}}
 #' @return Custom API Token Object
+#' @examples
+#' #Intialize Token
+#' token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
+#'
+#' # Get Team ID
+#' Team_list <- EF_GetTeamsList(token)
+#'
+#' # Update Token with Team ID
+#' token <- EF_UpdateTokenTeam(token, TEAM_ID$TeamId)
+#'
 #' @export
 
 EF_UpdateTokenTeam <- function(token, TEAM_ID){
@@ -50,6 +72,7 @@ EF_UpdateTokenTeam <- function(token, TEAM_ID){
 
 #' Convert Date to EliteForm Formate
 #' @return Returns date in MMDDYYYY format
+
 convert_to_MMddyyyy <- function(date_str) {
   # Try parsing the input using multiple formats
   parsed_date <- tryCatch({
@@ -94,6 +117,7 @@ convert_to_MMddyyyy <- function(date_str) {
 
 EF_GetAllTrackedReps <- function(token, date = ""){
   request_url <- "/api/v1/GetAllTrackedReps/"
+  if(token$TEAM_ID == as.numeric())
   if(date != ""){
     date = convert_to_MMddyyyy(date)
     request <- paste0(request_url, token@TEAM_ID, "/",date)
@@ -209,7 +233,7 @@ EF_GetAllTrackedReps3 <- function(token, date = ""){
 #' @export
 EF_GetAllSets <- function(token, date = "", includePaperless = ""){
   includePaperless <- as.character(includePaperless)
-  if (~(includePaperless %in% c("1", "0", ""))){
+  if (!(includePaperless %in% c("1", "0", ""))){
     stop("Error: Input must be 1, 0 or ''")
   }
   request_url <- "/api/v1/GetAllSets/"

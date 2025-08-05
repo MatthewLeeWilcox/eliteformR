@@ -1,0 +1,116 @@
+---
+title: "Getting Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting-started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package is built to help build custom solutions using EliteForm's API. Please reference your API Call limits before running call's within loops. Additionally this package requires an EliteForm Account and X-API Key so talk with you EliteForm representative first!
+
+## Downloading Package
+
+To download the eliteformR package, either go to the <a href= "https://github.com/MatthewLeeWilcox/eliteformR">eliteformR Github Repo</a> or use devtools as seen below:
+
+```{r, eval = FALSE}
+# Install from GitHub
+# install.packages("devtools")
+devtools::install_github("MatthewLeeWilcox/eliteformR")
+```
+
+## Starting to use eliteformR
+
+```{r setup, eval = FALSE}
+# Load the eliteformR package
+library(eliteformR)
+```
+
+To begin, you will need your EliteForm URL and X-API key. Use the EF_CreateAPIToken function to start.
+
+```{r, eval = FALSE}
+API_key <- "YOUR-API-KEY-HERE"
+URL <- "https://your_team_url_eliteform.com"
+
+token <- EF_CreateAPIToken(URL, API_key)
+
+```
+
+Once you have your API Token Generated, you will need to download the Team ID's associated with you EliteForm Account and update your token with that Team's ID.
+
+```{r, eval = FALSE}
+# Download Team List
+team_list_df <- EF_GetTeamsList(token)
+
+#   TeamId     Name
+# 1    111 Football
+# 2    112 Soccer
+# 3    113 Baseball
+```
+
+```{r,eval = FALSE}
+# Update the Token with the Selected Team ID
+# TeamId should be as.numeric()
+token <- EF_UpdateTokenTeam(token, team_list_df$TeamId[1])
+# or 
+# token <- EF_UpdateTokenTeam(token, 111)
+```
+
+
+Now that the Token has been updated with the selected Team Id, you can begin running many of the other functions. An example is provided below that get's all sets from a particular day:
+
+```{r,eval = FALSE}
+# Get all Sets (Defaulted to Current Date and Paperless)
+all_sets_df <- EF_GetAllSets(token)
+
+# Get all sets for a specified date
+
+all_sets_df <- EF_GetAllSets(token, "07/22/2025")
+
+all_sets_df
+
+# AverageVelocity PeakVelocity AveragePower PeakPower      Date             Time AthleteId    LastName FirstName
+# 1        0.471111     0.921111     530.2178  1556.547 7/22/2025 11:41:13.6319597      4346     Athlete       1
+# 2        0.465000     1.423333     623.4000  1640.525 7/22/2025 11:40:26.4072519      5232     Athlete       2
+# 3        0.360000     0.748571     705.8743  1544.860 7/22/2025 11:39:37.1249414      6750     Athlete       3
+# 4        0.425000     1.268333     548.3500  1929.968 7/22/2025 11:39:36.0497881      4233     Athlete       4
+# 5        0.432857     0.895714     568.7771  1444.509 7/22/2025 11:39:33.7107749      4246     Athlete       5
+# 6        0.440000     1.023333     668.0000  1738.980 7/22/2025 11:39:29.0596346      6744     Athlete       6
+#      Exercise SetNumber RepsAssigned RepsCompleted LoadFactor ActualWeight ActualRest ReactionTimeInMS    Work
+# 1 BENCH PRESS         5            1             9      0.875          310        353                0 7407.65
+# 2 BENCH PRESS         5            1             6      0.875          270        384                0 3552.91
+# 3 BENCH PRESS         5            1             7      0.875          350        239                0 5741.98
+# 4 BENCH PRESS         5            1             6      0.875          335        299                0 5850.81
+# 5 BENCH PRESS         5            1             7      0.875          285        344                0 4253.00
+# 6 BENCH PRESS         5            1             3      0.875          365        210                0 2546.26
+
+# Get all Sets for a specific date and Not Paperless
+
+all_sets_df <- EF_GetAllSets(token, "07/22/2025", includePaperless = 0)
+
+all_sets_df
+
+#   AverageVelocity PeakVelocity AveragePower PeakPower      Date             Time AthleteId    LastName FirstName    Exercise SetNumber RepsAssigned RepsCompleted
+# 1        0.471111     0.921111     650.2178  1266.547 7/22/2025 11:41:13.6319597      4346     Athlete         1 BENCH PRESS         5            1             9
+# 2        0.465000     1.423333     556.4000  1710.525 7/22/2025 11:40:26.4072519      5232     Athlete         2 BENCH PRESS         5            1             6
+# 3        0.360000     0.748571     559.8743  1164.860 7/22/2025 11:39:37.1249414      6750     Athlete         3 BENCH PRESS         5            1             7
+# 4        0.425000     1.268333     634.3500  1889.968 7/22/2025 11:39:36.0497881      4233     Athlete         4 BENCH PRESS         5            1             6
+# 5        0.432857     0.895714     547.7771  1134.509 7/22/2025 11:39:33.7107749      4246     Athlete         5 BENCH PRESS         5            1             7
+# 6        0.440000     1.023333     715.0000  1658.980 7/22/2025 11:39:29.0596346      6744     Athlete         6 BENCH PRESS         5            1             3
+#   LoadFactor ActualWeight ActualRest ReactionTimeInMS    Work
+# 1      0.875          310        353                0 7107.65
+# 2      0.875          270        384                0 3652.91
+# 3      0.875          350        239                0 5641.98
+# 4      0.875          335        299                0 5150.81
+# 5      0.875          285        344                0 4153.00
+# 6      0.875          365        210                0 2646.26
+
+```
+
