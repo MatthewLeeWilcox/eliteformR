@@ -1,0 +1,82 @@
+---
+title: "Getting Player Max's"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{get-max}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This Guide will explain how to access you 1 rep Max
+
+
+
+# Set up API Token
+
+Below is the code to set up your API Token. Please reference the [Get Started Guide](`vignette("getting-started")`).
+```{r setup, eval = FALSE}
+# Load the eliteformR package
+library(eliteformR)
+
+API_key <- "YOUR-API-KEY-HERE"
+URL <- "https://your_team_url_eliteform.com"
+
+token <- EF_CreateAPIToken(URL, API_key)
+
+# Download Team List
+team_list_df <- EF_GetTeamsList(token)
+
+# Update the Token with the Selected Team ID
+# TeamId should be as.numeric()
+token <- EF_UpdateTokenTeam(token, team_list_df$TeamId[1])
+# or 
+# token <- EF_UpdateTokenTeam(token, 111)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

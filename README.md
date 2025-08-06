@@ -1,4 +1,4 @@
-# eliteformR <img src="figures/ElieteformR.png" align="right" height="120"/>
+# eliteformR <img src="man/figures/logo.png" align="right" height="120"/>
 **Get your set's and max's form the EliteForm API**   
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions)

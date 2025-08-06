@@ -21,7 +21,7 @@ EF_CreateAPIToken <- function(url,api_key ){
 }
 
 
-#' Get List of Teams  f
+#' Get List of Teams
 #'
 #' Get team names and IDs for the organization
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
@@ -70,7 +70,7 @@ EF_UpdateTokenTeam <- function(token, TEAM_ID){
   return(token)
 }
 
-#' Convert Date to EliteForm Formate
+#' Convert Date to EliteForm Format
 #' @return Returns date in MMDDYYYY format
 
 convert_to_MMddyyyy <- function(date_str) {

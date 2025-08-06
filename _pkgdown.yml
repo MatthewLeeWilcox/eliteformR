@@ -1,43 +1,44 @@
 url: https://matthewleewilcox.github.io/eliteformR/
 # _pkgdown.yml
 
+logo: man/figures/logo.png
 
 # 2. Appearance settings
 template:
   bootstrap: 5
-  bootswatch: darkly  # or cosmo, darkly, etc.
+  bootswatch: superhero  # or cosmo, darkly, etc.
   bslib:
-    primary: "#6ab2d9"
-    secondary: "#c95c97"
+    primary: "#c95c97"
+    secondary: "#6ab2d9"
 
 
 # 3. Navbar links
 navbar:
   structure:
-    left: [home,search, reference, news]
+    left: [home, guides,  reference]
     right: [github]
   components:
     github:
       icon: fa-github
       href: https://github.com/MatthewLeeWilcox/eliteformR
-
+    guides:
+      text: "Guides"
+      menu:
+        - text: "Getting Started"
+          href: articles/getting-started.html
+        - text: "Getting Max's"
+          href: articles/get-max.html
 # 1. Website title and URL
 home:
   title: eliteformR
   sidebar:
     structure: [links, license]
 
-# news:
+# news:s
 #   title: test
 # # 5. Articles
 # articles:
-#   - title: "Getting Started"
+#   - title: "Guides"
 #     contents:
-#       - intro
-#   - title: "Use Cases"
-#     contents:
-#       - advanced-workflow
+#       - getting-started
 
-# 6. Include logo (if available)
-# Place logo.png in man/figures/
-# logo: man/figures/logo.png
