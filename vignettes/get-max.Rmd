@@ -20,7 +20,7 @@ This Guide will explain how to access you 1 rep Max
 
 # Set up API Token
 
-Below is the code to set up your API Token. Please reference the [Get Started Guide](`vignette("getting-started")`).
+Below is the code to set up your API Token. Please reference the [Get Started Guide](getting-started.html).
 ```{r setup, eval = FALSE}
 # Load the eliteformR package
 library(eliteformR)
