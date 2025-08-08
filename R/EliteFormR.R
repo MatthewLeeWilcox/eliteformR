@@ -41,11 +41,11 @@ EF_CreateAPIToken <- function(url, api_key) {
 #' @export
 
 EF_GetTeamsList <- function(token){
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, "/api/v1/getteamslist"),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  teams_df <- fromJSON(content(pull_json, as="text"))
+  teams_df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(teams_df)
 }
 
@@ -128,11 +128,11 @@ EF_GetAllTrackedReps <- function(token, date = ""){
     request <- paste0(request_url, token@TEAM_ID,"/")
 
   }
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
 
@@ -191,11 +191,11 @@ EF_GetAllTrackedReps3 <- function(token, date = ""){
     request <- paste0(request_url, token@TEAM_ID,"/")
 
   }
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
 
@@ -247,11 +247,11 @@ EF_GetAllSets <- function(token, date = "", includePaperless = ""){
     request <- paste0(request_url, token@TEAM_ID,"/", includePaperless)
 
   }
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
 
@@ -275,11 +275,11 @@ EF_Get1RMs <- function(token){
 
   request <- paste0("api/v1/get1rms/", token@TEAM_ID)
   print(request)
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
 
@@ -303,12 +303,12 @@ EF_GetPower1RMs <- function(token){
 
   request <- paste0("api/v1/getpower1rms/", token@TEAM_ID)
   print(request)
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
 
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
 
@@ -339,10 +339,10 @@ EF_GetAthleteInfo <- function(token, date = ""){
     request <- paste0(request_url, token@TEAM_ID,"/")
 
   }
-  pull_json <- GET(
+  pull_json <- httr::GET(
     url = paste0(token@url, request),
-    add_headers(accept = "application", `X-ApiKey` = token@api_key)
+    httr::add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  df <- fromJSON(content(pull_json, as="text"))
+  df <- jsonlite::fromJSON(httr::content(pull_json, as="text"))
   return(df)
 }
