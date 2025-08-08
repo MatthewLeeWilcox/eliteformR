@@ -12,6 +12,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![packageversion](https://img.shields.io/badge/Package%20version-0.1.0-orange.svg?style=flat-square)](commits/master)
 
+[![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
