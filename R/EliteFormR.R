@@ -5,13 +5,14 @@
 #' @param api_key X-ApiKey string
 #' @return Returns a S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
 #' @examples
+#' \dontrun{
 #' # Create an API token with your EliteForm URL and API key
 #' token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
 #'
 #' # Access components of the token
 #' token@url
 #' token@api_key
-#'
+#' }
 #' @export
 
 # EF_CreateAPIToken <- function(url,api_key ){
@@ -35,9 +36,10 @@ EF_CreateAPIToken <- function(url, api_key) {
 #'   \item{Name}{`character` (string) — Team Name}
 #' }
 #' @examples
+#' \dontrun{
 #' Download Team List
 #' Team_list <- EF_GetTeamsList(token)
-#'
+#' }
 #' @export
 
 EF_GetTeamsList <- function(token){
@@ -57,6 +59,7 @@ EF_GetTeamsList <- function(token){
 #' @param TEAM_ID Team Id referenced in  \code{\link{EF_GetTeamsList}}
 #' @return Custom API Token Object
 #' @examples
+#' \dontrun{
 #' #Intialize Token
 #' token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
 #'
@@ -65,7 +68,7 @@ EF_GetTeamsList <- function(token){
 #'
 #' # Update Token with Team ID
 #' token <- EF_UpdateTokenTeam(token, TEAM_ID$TeamId)
-#'
+#' }
 #' @export
 
 EF_UpdateTokenTeam <- function(token, TEAM_ID){

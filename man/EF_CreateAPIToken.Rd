@@ -18,11 +18,12 @@ Returns a S4 Object that saves your X-ApiKey and URL and acts as a token for lat
 Implements Elite Form's Login using your “X-ApiKey” and your custom Elite Form URL
 }
 \examples{
+\dontrun{
 # Create an API token with your EliteForm URL and API key
 token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
 
 # Access components of the token
 token@url
 token@api_key
-
+}
 }

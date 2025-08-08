@@ -20,7 +20,8 @@ A data frame with the following columns:
 Get team names and IDs for the organization
 }
 \examples{
+\dontrun{
 Download Team List
 Team_list <- EF_GetTeamsList(token)
-
+}
 }

@@ -1,5 +1,5 @@
 # eliteformR <img src="man/figures/logo.png" align="right" height="120"/>
-**Get your set's and max's form the EliteForm API**   
+**Get your set's and max's from the EliteForm API**   
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml)
 ![Last Commit](https://img.shields.io/github/last-commit/MatthewLeeWilcox/eliteformR?style=flat)
@@ -13,9 +13,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![packageversion](https://img.shields.io/badge/Package%20version-0.1.0-orange.svg?style=flat-square)](commits/master)
 
 <!-- badges: end -->
-
-
-eliteformR is an R packaged designed to provide easy interfacing with the [EliteForm](https://www.eliteform.com/) API. An EliteForm account is required to utilize this package.
+eliteformR is an R package designed to provide easy interfacing with the [EliteForm](https://www.eliteform.com/) API. An EliteForm account is required to utilize this package.
 
 # Installation
 You can install version 0.1.0 of elieteformR from Github with: 

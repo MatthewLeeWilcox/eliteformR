@@ -19,6 +19,7 @@ Update the custom API Token to select the team to pull for the remainder of valu
 Must be saved as the token values ie token <- EF_UpdateTokenTeam(token, 1)
 }
 \examples{
+\dontrun{
 #Intialize Token
 token <- EF_CreateAPIToken("https://your.eliteform.com", "your-api-key")
 
@@ -27,5 +28,5 @@ Team_list <- EF_GetTeamsList(token)
 
 # Update Token with Team ID
 token <- EF_UpdateTokenTeam(token, TEAM_ID$TeamId)
-
+}
 }
