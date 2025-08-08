@@ -22,5 +22,5 @@ Returns a data frame with the following columns:
 }
 }
 \description{
-Get all current Power
+Get all current Power 1 Rep max.
 }

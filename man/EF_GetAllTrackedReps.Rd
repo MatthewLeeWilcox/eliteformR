@@ -25,8 +25,8 @@ Returns a data frame with the following columns:
 }
 }
 \description{
-Get all tracked reps for a team on a specific date. If you don’t specify `reportDate`, the current date will be used.
+Get all tracked reps for a team on a specific date.
 }
 \details{
-If you don’t specify reportDate, the current date will be used.(These results do not include lifts that were entered through Paperless. For Paperless results, use \code{\link{EF_GetAllSets}} with includePaperless set.)
+If you don’t specify the date, the current date will be used.(These results do not include lifts that were entered through Paperless. For Paperless results, use \code{\link{EF_GetAllSets}} with includePaperless set.)
 }

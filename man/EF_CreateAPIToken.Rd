@@ -12,7 +12,7 @@ EF_CreateAPIToken(url, api_key)
 \item{api_key}{X-ApiKey string}
 }
 \value{
-Returns a S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
+Returns an S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
 }
 \description{
 Implements Elite Form's Login using your “X-ApiKey” and your custom Elite Form URL

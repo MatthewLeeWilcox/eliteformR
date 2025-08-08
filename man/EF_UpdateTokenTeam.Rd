@@ -15,7 +15,7 @@ EF_UpdateTokenTeam(token, TEAM_ID)
 Custom API Token Object
 }
 \description{
-Update the custom API Token to select the team to pull for the remainder of values
+Update the custom API Token to select the team to pull from.
 Must be saved as the token values ie token <- EF_UpdateTokenTeam(token, 1)
 }
 \examples{

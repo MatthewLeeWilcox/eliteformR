@@ -17,7 +17,7 @@ A data frame with the following columns:
 }
 }
 \description{
-Get team names and IDs for the organization
+Get team names and IDs for the entire user account.
 }
 \examples{
 \dontrun{
