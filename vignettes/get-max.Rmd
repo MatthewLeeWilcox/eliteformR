@@ -2,7 +2,7 @@
 title: "Getting Player Max's"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{get-max}
+  %\VignetteIndexEntry{Getting Player Max's}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,7 +21,7 @@ This Guide will explain how to access an entire team's 1 rep max and 1 rep power
 # Set up API Token
 
 Below is the code to set up your API Token. Please reference the [Get Started Guide](getting-started.html).
-```{r setup, eval = FALSE}
+```{r , eval = FALSE}
 # Load the eliteformR package
 library(eliteformR)
 

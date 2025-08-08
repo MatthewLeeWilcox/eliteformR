@@ -2,7 +2,7 @@
 title: "Getting all Reps and Sets"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{get-reps-and-sets}
+  %\VignetteIndexEntry{Getting all Reps and Sets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

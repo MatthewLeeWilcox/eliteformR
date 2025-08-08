@@ -29,7 +29,7 @@ EF_CreateAPIToken <- function(url, api_key) {
 #' Get List of Teams
 #'
 #' Get team names and IDs for the entire user account.
-#' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
+#' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}).
 #' @return A data frame with the following columns:
 #' \describe{
 #'   \item{TeamId}{`numeric` (long) — Team unique identifier}

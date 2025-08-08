@@ -7,7 +7,7 @@
 EF_GetTeamsList(token)
 }
 \arguments{
-\item{token}{API Token Object (see \code{\link{EF_CreateAPIToken}}}
+\item{token}{API Token Object (see \code{\link{EF_CreateAPIToken}}).}
 }
 \value{
 A data frame with the following columns:
