@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-This Guide will explain how to access you 1 rep Max
+This Guide will explain how to access an entire team 1 rep max and 1 rep power max.
 
 
 
@@ -40,13 +40,50 @@ token <- EF_UpdateTokenTeam(token, team_list_df$TeamId[1])
 # token <- EF_UpdateTokenTeam(token, 111)
 ```
 
+# Get Team's Current 1 Rep Max
+
+To gather your Team's current 1 rep maxes, you will require just the token. 
+
+```{r, eval = FALSE}
+Team1RepMax_df <- EF_Get1RMs(token)
+
+Team1RepMax_df
+
+#           Date AthleteId     LastName FirstName    Exercise Result
+# 1     6/8/2023      4342       Player         1       SQUAT    450
+# 2     5/8/2023      4342       Player         1 POWER CLEAN    302
+# 3    7/12/2023      4342       Player         1 BENCH PRESS    356
+# 4    5/28/2024      4343       Player         2       SQUAT    100
+# 5    5/28/2024      4343       Player         2 POWER CLEAN    100
+# 6    5/28/2024      4343       Player         2 BENCH PRESS    100
+# 7    7/27/2025      4344       Player         3       SQUAT    360
+# 8    5/27/2025      4344       Player         3 POWER CLEAN    314
+# 9    7/29/2025      4344       Player         3 BENCH PRESS    320
+
+```
+
+# Get Team's Current Power 1 Rep  Max
+
+To gather your Team's current power 1 rep maxes, you will require just the token. 
 
 
+```{r, eval = FALSE}
+Power.Team1RepMax_df <- EF_GetPower1RMs(token)
 
+Power.Team1RepMax_df
 
+#           Date AthleteId     LastName FirstName    Exercise Result
+# 1     6/8/2023      4342       Player         1       SQUAT    450
+# 2     5/8/2023      4342       Player         1 POWER CLEAN    302
+# 3    7/12/2023      4342       Player         1 BENCH PRESS    356
+# 4    5/28/2024      4343       Player         2       SQUAT    100
+# 5    5/28/2024      4343       Player         2 POWER CLEAN    100
+# 6    5/28/2024      4343       Player         2 BENCH PRESS    100
+# 7    7/27/2025      4344       Player         3       SQUAT    360
+# 8    5/27/2025      4344       Player         3 POWER CLEAN    314
+# 9    7/29/2025      4344       Player         3 BENCH PRESS    320
 
-
-
+```
 
 
 

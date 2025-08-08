@@ -28,11 +28,18 @@ navbar:
           href: articles/getting-started.html
         - text: "Getting Max's"
           href: articles/get-max.html
+        - text: "Getting all Sets and Reps"
+          href: articles/get-reps-and-sets.html
 # 1. Website title and URL
 home:
   title: eliteformR
   sidebar:
-    structure: [links, license]
+    structure: [links, license, developers]
+    components:
+          developers:
+            title: "Developers"
+            text: |
+              - [Matthew Wilcox](https://github.com/MatthewLeeWilcox)
 
 # news:s
 #   title: test

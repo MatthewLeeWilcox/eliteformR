@@ -14,11 +14,15 @@
 #'
 #' @export
 
-EF_CreateAPIToken <- function(url,api_key ){
-  setClass("API_TOKEN", slots=list(url="character", api_key="character", TEAM_ID = "numeric"))
-  token <- new("API_TOKEN", url = url, api_key = api_key)
-  return(token)
+# EF_CreateAPIToken <- function(url,api_key ){
+#   setClass("API_TOKEN", slots=list(url="character", api_key="character", TEAM_ID = "numeric"))
+#   token <- new("API_TOKEN", url = url, api_key = api_key)
+#   return(token)
+# }
+EF_CreateAPIToken <- function(url, api_key) {
+  new("API_TOKEN", url = url, api_key = api_key, TEAM_ID = as.numeric(NA))
 }
+
 
 
 #' Get List of Teams
@@ -41,8 +45,7 @@ EF_GetTeamsList <- function(token){
     url = paste0(token@url, "/api/v1/getteamslist"),
     add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-
-  teams_df <- fromJSON(content(test, as="text"))
+  teams_df <- fromJSON(content(pull_json, as="text"))
   return(teams_df)
 }
 
@@ -117,7 +120,6 @@ convert_to_MMddyyyy <- function(date_str) {
 
 EF_GetAllTrackedReps <- function(token, date = ""){
   request_url <- "/api/v1/GetAllTrackedReps/"
-  if(token$TEAM_ID == as.numeric())
   if(date != ""){
     date = convert_to_MMddyyyy(date)
     request <- paste0(request_url, token@TEAM_ID, "/",date)
@@ -239,10 +241,10 @@ EF_GetAllSets <- function(token, date = "", includePaperless = ""){
   request_url <- "/api/v1/GetAllSets/"
   if(date != ""){
     date = convert_to_MMddyyyy(date)
-    request <- paste0(request_url, token@TEAM_ID, "/",date)
+    request <- paste0(request_url, token@TEAM_ID, "/",date, "/", includePaperless)
 
   } else {
-    request <- paste0(request_url, token@TEAM_ID,"/")
+    request <- paste0(request_url, token@TEAM_ID,"/", includePaperless)
 
   }
   pull_json <- GET(
@@ -271,13 +273,12 @@ EF_GetAllSets <- function(token, date = "", includePaperless = ""){
 
 EF_Get1RMs <- function(token){
 
-  request <- paste0("/api/v1/get1rms/", token@TEAM_ID)
+  request <- paste0("api/v1/get1rms/", token@TEAM_ID)
   print(request)
   pull_json <- GET(
     url = paste0(token@url, request),
     add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  print(pull_json)
   df <- fromJSON(content(pull_json, as="text"))
   return(df)
 }
@@ -300,13 +301,13 @@ EF_Get1RMs <- function(token){
 
 EF_GetPower1RMs <- function(token){
 
-  request <- paste0("/api/v1/getpower1rms/", token@TEAM_ID)
+  request <- paste0("api/v1/getpower1rms/", token@TEAM_ID)
   print(request)
   pull_json <- GET(
     url = paste0(token@url, request),
     add_headers(accept = "application", `X-ApiKey` = token@api_key)
   )
-  print(pull_json)
+
   df <- fromJSON(content(pull_json, as="text"))
   return(df)
 }

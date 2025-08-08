@@ -2,7 +2,7 @@
 % Please edit documentation in R/EliteFormR.R
 \name{convert_to_MMddyyyy}
 \alias{convert_to_MMddyyyy}
-\title{Convert Date to EliteForm Formate}
+\title{Convert Date to EliteForm Format}
 \usage{
 convert_to_MMddyyyy(date_str)
 }
@@ -10,5 +10,5 @@ convert_to_MMddyyyy(date_str)
 Returns date in MMDDYYYY format
 }
 \description{
-Convert Date to EliteForm Formate
+Convert Date to EliteForm Format
 }

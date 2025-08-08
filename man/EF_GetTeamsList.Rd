@@ -2,7 +2,7 @@
 % Please edit documentation in R/EliteFormR.R
 \name{EF_GetTeamsList}
 \alias{EF_GetTeamsList}
-\title{Get List of Teams  f}
+\title{Get List of Teams}
 \usage{
 EF_GetTeamsList(token)
 }
