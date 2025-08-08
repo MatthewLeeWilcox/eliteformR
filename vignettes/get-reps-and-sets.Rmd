@@ -43,20 +43,21 @@ token <- EF_UpdateTokenTeam(token, team_list_df$TeamId[1])
 
 # Get All Sets
 
-You can get all sets for a team on a specified date. You can use the command `EF_GetAllSets()` and just incldue the token if you would like to get all sets including paperless for a current date. 
+You can get all sets for a team on a specified date. You can use the command `EF_GetAllSets()` and just include the Token if you would like to get all sets, including paperless, for the current date. 
 To specifiy a date include the "date =" argument and have you date as a string in any of these formats: "%m/%d/%Y", "%m-%d-%Y", "%m%d%Y", "%Y/%m/%d", "%Y-%m-%d", "%Y%m%d". 
-Finally If you do not want to includepaperless, set the "includePaperless =" arguemnt to 0. It will default to yes if nothing is include or you could instead manually set it to use by selecting "includePaperless = 1"
-
+Finally, if you do not want to includePaperless, set the "includePaperless =" argument to 0. It will default to yes if nothing is included, or you could instead manually set it to use by selecting "includePaperless = 1"
 
 ```{r, eval = FALSE}
 # Get All Sets
 # Defaults to the current date and to include paperless if only including Token
 all_sets_df <- EF_GetAllSets(token)
 
-# Get All sets on Date. Date can be in any of these formats "%m/%d/%Y", "%m-%d-%Y", "%m%d%Y", "%Y/%m/%d", "%Y-%m-%d", "%Y%m%d"
+# Get all sets on a Date. Date can be in any of these formats "%m/%d/%Y", "%m-%d-%Y", "%m%d%Y", "%Y/%m/%d", "%Y-%m-%d", "%Y%m%d"
 all_sets_df <-EF_GetAllSets(token, "07/22/2025")
 
-# Get All sets on a date, not including Paperless. the includePaperless varaible must either be 1 for yes, 0 for no or omited from the function. 
+# Get All sets on a date, not including Paperless. The includePaperless variable must either be 1 for yes, 0 for no, or omitted from the function. 
+all_sets_df <-EF_GetAllSets(token, "07/22/2025", includePaperless = 0)
+
 all_sets_df <-EF_GetAllSets(token, "07/22/2025", includePaperless = 0)
 
 all_sets_df
@@ -74,10 +75,7 @@ all_sets_df
 
 # Get All Reps
 
-If you want to get all the reps the team performs on a single day, there are two functions to choose from. `EF_GetAllTrackedReps()` is the base function that gets all the reps on a specific date. If you want to include fields provided in the EF Data Points Report that are not already available in `EF_GetAllTrackedReps()`, use the function `EF_GetAllTrackedReps3()`. Like in getting all sets, To specifiy a date include the "date =" argument and have you date as a string in any of these formats: "%m/%d/%Y", "%m-%d-%Y", "%m%d%Y", "%Y/%m/%d", "%Y-%m-%d", "%Y%m%d". If no date is provided it will default to the current date. 
-
-
-
+If you want to get all the reps the team performs on a single day, there are two functions to choose from. `EF_GetAllTrackedReps()` is the base function that retrieves all reps for a specific date. If you want to include fields provided in the EF Data Points Report that are not already available in `EF_GetAllTrackedReps()`, use the function `EF_GetAllTrackedReps3()`. Like in getting all sets, To specifiy a date include the "date =" argument and have you date as a string in any of these formats: "%m/%d/%Y", "%m-%d-%Y", "%m%d%Y", "%Y/%m/%d", "%Y-%m-%d", "%Y%m%d". If no date is provided, it will default to the current date. 
 
 ```{r, eval= FALSE}
 

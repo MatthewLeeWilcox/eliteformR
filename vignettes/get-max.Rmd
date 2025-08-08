@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-This Guide will explain how to access an entire team 1 rep max and 1 rep power max.
+This Guide will explain how to access an entire team's 1 rep max and 1 rep power max.
 
 
 
