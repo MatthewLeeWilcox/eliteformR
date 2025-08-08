@@ -10,6 +10,8 @@ EF_GetAllSets(token, date = "", includePaperless = "")
 \item{token}{API Token Object (see \code{\link{EF_CreateAPIToken}})}
 
 \item{date}{Input date as a string in the format \code{"\%m-\%d-\%Y"} (e.g., \code{"07-28-2025"}).}
+
+\item{includePaperless}{Include reps that were inputed through Paperless. 1 = True, 0 = False. Defaults to beign True.}
 }
 \value{
 Returns a data frame with the following columns:

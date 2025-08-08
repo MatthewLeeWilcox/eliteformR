@@ -26,5 +26,7 @@ Returns a data frame with the following columns:
 Get basic information for all athletes on a team
 }
 \details{
-
+If you don’t specify \code{date}, the current date will be used.
+  A date is required because the athletes belonging to a team can vary by season.
+  Any date within the desired season will work for specifying that season.
 }

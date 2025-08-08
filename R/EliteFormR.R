@@ -77,8 +77,20 @@ EF_UpdateTokenTeam <- function(token, TEAM_ID){
 }
 
 #' Convert Date to EliteForm Format
-#' @return Returns date in MMDDYYYY format
-
+#'
+#' Convert a date string into EliteForm's required format: `"MMDDYYYY"` (no separators).
+#'
+#' @param date_str A character date string. Accepted formats include
+#'   \code{"\%m/\%d/\%Y"}, \code{"\%m-\%d-\%Y"}, \code{"\%m\%d\%Y"},
+#'   \code{"\%Y/\%m/\%d"}, \code{"\%Y-\%m-\%d"}, \code{"\%Y\%m\%d"}.
+#'
+#' @return A character string formatted as \code{"MMDDYYYY"}.
+#'
+#' @examples
+#' convert_to_MMddyyyy("2025-07-28")
+#' convert_to_MMddyyyy("07/28/2025")
+#'
+#' @export
 convert_to_MMddyyyy <- function(date_str) {
   # Try parsing the input using multiple formats
   parsed_date <- tryCatch({
@@ -208,7 +220,7 @@ EF_GetAllTrackedReps3 <- function(token, date = ""){
 #'Get all sets for a team on a specific date
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}})
 #' @param date Input date as a string in the format \code{"\%m-\%d-\%Y"} (e.g., \code{"07-28-2025"}).
-#' @param includePaperless
+#' @param includePaperless Include reps that were inputed through Paperless. 1 = True, 0 = False. Defaults to beign True.
 #' @description
 #' NOTE:
 #' 1 sets includePaperless to true, and 0 sets it to false.
@@ -330,7 +342,10 @@ EF_GetPower1RMs <- function(token){
 #'   \item{Categories}{`character` — Custom or predefined grouping categories (e.g., Returners, Injured)}
 #' }
 #'
-#' @details If you don’t specify reportDate, the current date will be used. A date is required because the athletes belonging to a team can vary by season. Any date within the desired season will work for specifying a season. EF_GetAthleteInfo <- function(token){
+#' @details If you don’t specify \code{date}, the current date will be used.
+#'   A date is required because the athletes belonging to a team can vary by season.
+#'   Any date within the desired season will work for specifying that season.
+#'
 #' @export
 EF_GetAthleteInfo <- function(token, date = ""){
   request_url <- "/api/v1/getathleteinfo/"

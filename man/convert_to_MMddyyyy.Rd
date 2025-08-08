@@ -6,9 +6,19 @@
 \usage{
 convert_to_MMddyyyy(date_str)
 }
+\arguments{
+\item{date_str}{A character date string. Accepted formats include
+\code{"\%m/\%d/\%Y"}, \code{"\%m-\%d-\%Y"}, \code{"\%m\%d\%Y"},
+\code{"\%Y/\%m/\%d"}, \code{"\%Y-\%m-\%d"}, \code{"\%Y\%m\%d"}.}
+}
 \value{
-Returns date in MMDDYYYY format
+A character string formatted as \code{"MMDDYYYY"}.
 }
 \description{
-Convert Date to EliteForm Format
+Convert a date string into EliteForm's required format: `"MMDDYYYY"` (no separators).
+}
+\examples{
+convert_to_MMddyyyy("2025-07-28")
+convert_to_MMddyyyy("07/28/2025")
+
 }
