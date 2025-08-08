@@ -1,7 +1,7 @@
 # eliteformR <img src="man/figures/logo.png" align="right" height="120"/>
 **Get your set's and max's form the EliteForm API**   
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions)
+[![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml)
 ![Last Commit](https://img.shields.io/github/last-commit/MatthewLeeWilcox/eliteformR?style=flat)
 [![license](https://img.shields.io/badge/license-MIT%20+%20file%20LICENSE-lightgrey.svg)](https://choosealicense.com/)
 [![minimal R
@@ -12,7 +12,6 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![packageversion](https://img.shields.io/badge/Package%20version-0.1.0-orange.svg?style=flat-square)](commits/master)
 
-[![R-CMD-check](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatthewLeeWilcox/eliteformR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
