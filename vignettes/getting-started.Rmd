@@ -26,13 +26,46 @@ To download the eliteformR package, either go to the <a href= "https://github.co
 devtools::install_github("MatthewLeeWilcox/eliteformR")
 ```
 
-## Starting to use eliteformR
+## Creating Token
 
 ```{r setup, eval = FALSE}
 # Load the eliteformR package
 library(eliteformR)
 ```
 
+To Create your API Token to allow the eliteformR package to interface with the Eliteform API, you must call `EF_CreateAPIToken()`. 
+
+```{r, eval = FALSE}
+# Define the access url and X-API-Key
+url <- "https://your.eliteform.com"
+X_API_KEY <- "your-api-key"
+
+# Intialize Token
+token <- EF_CreateAPIToken(url, X_API_KEY)
+
+```
+
+
+Once the API Token has been intialized, you can begin to use the package. However before you can pull data from a individual team, you must pull that Team ID and Update your token with it.
+
+```{r eval = FALSE}
+# Get all Team ID's
+teams_df <- EF_GetTeamsList(token)
+
+teams_df 
+
+#   TeamId     Name
+# 1    111 Football
+# 1    112 Softball
+# 1    113 Baseball
+# 1    114   Soccer
+
+# Update the Token's Team ID
+token <- EF_UpdateTokenTeam(token, 111)
+# or
+token <- EF_UpdateTokenTeam(token, teams_df$TeamId[1])
+
+```
 
 Now that the Token has been updated with the selected Team Id, you can begin running many of the other functions. An example is provided below that get's all sets from a particular day:
 

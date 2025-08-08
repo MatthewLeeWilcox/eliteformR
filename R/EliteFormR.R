@@ -3,7 +3,7 @@
 #' Implements Elite Form's Login using your “X-ApiKey” and your custom Elite Form URL
 #' @param url URL string
 #' @param api_key X-ApiKey string
-#' @return Returns a S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
+#' @return Returns an S4 Object that saves your X-ApiKey and URL and acts as a token for later pulls
 #' @examples
 #' \dontrun{
 #' # Create an API token with your EliteForm URL and API key
@@ -28,7 +28,7 @@ EF_CreateAPIToken <- function(url, api_key) {
 
 #' Get List of Teams
 #'
-#' Get team names and IDs for the organization
+#' Get team names and IDs for the entire user account.
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
 #' @return A data frame with the following columns:
 #' \describe{
@@ -53,7 +53,7 @@ EF_GetTeamsList <- function(token){
 
 #' Update the Token Team Attribute
 #'
-#' Update the custom API Token to select the team to pull for the remainder of values
+#' Update the custom API Token to select the team to pull from.
 #' Must be saved as the token values ie token <- EF_UpdateTokenTeam(token, 1)
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}}
 #' @param TEAM_ID Team Id referenced in  \code{\link{EF_GetTeamsList}}
@@ -100,7 +100,7 @@ convert_to_MMddyyyy <- function(date_str) {
 
 #' Get All Tracked Reps
 #'
-#' Get all tracked reps for a team on a specific date. If you don’t specify `reportDate`, the current date will be used.
+#' Get all tracked reps for a team on a specific date.
 #'
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}})
 #' @param date Input date as a string in the format \code{"\%m-\%d-\%Y"} (e.g., \code{"07-28-2025"}).
@@ -117,7 +117,7 @@ convert_to_MMddyyyy <- function(date_str) {
 #'   \item{PeakVelocity}{`numeric` — Peak bar velocity (m/s)}
 #' }
 #' @details
-#'If you don’t specify reportDate, the current date will be used.(These results do not include lifts that were entered through Paperless. For Paperless results, use \code{\link{EF_GetAllSets}} with includePaperless set.)
+#'If you don’t specify the date, the current date will be used.(These results do not include lifts that were entered through Paperless. For Paperless results, use \code{\link{EF_GetAllSets}} with includePaperless set.)
 #' @export
 
 
@@ -288,7 +288,7 @@ EF_Get1RMs <- function(token){
 
 #' Get all Power 1 Rep Max for Entire Team
 #'
-#' Get all current Power
+#' Get all current Power 1 Rep max.
 #' @param token API Token Object (see \code{\link{EF_CreateAPIToken}})
 #' @return Returns a data frame with the following columns:
 #' \describe{
