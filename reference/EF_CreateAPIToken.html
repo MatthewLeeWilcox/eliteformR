@@ -19,6 +19,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/get-max.html">Getting Max's</a></li>
+    <li><a class="dropdown-item" href="../articles/get-reps-and-sets.html">Getting all Sets and Reps</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://github.com/MatthewLeeWilcox/eliteformR"><span class="fa fa-github"></span></a></li>
@@ -64,13 +65,12 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Create an API token with your EliteForm URL and API key</span></span></span>
 <span class="r-in"><span><span class="va">token</span> <span class="op">&lt;-</span> <span class="fu">EF_CreateAPIToken</span><span class="op">(</span><span class="st">"https://your.eliteform.com"</span>, <span class="st">"your-api-key"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in assign(mname, def, where):</span> cannot add bindings to a locked environment</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Access components of the token</span></span></span>
 <span class="r-in"><span><span class="va">token</span><span class="op">@</span><span class="va">url</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'token' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://your.eliteform.com"</span>
 <span class="r-in"><span><span class="va">token</span><span class="op">@</span><span class="va">api_key</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'token' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "your-api-key"</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

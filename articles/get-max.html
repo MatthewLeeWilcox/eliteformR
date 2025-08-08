@@ -39,6 +39,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides">
 <li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/get-max.html">Getting Max's</a></li>
+    <li><a class="dropdown-item" href="../articles/get-reps-and-sets.html">Getting all Sets and Reps</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -66,7 +67,8 @@
 
     
     
-<p>This Guide will explain how to access you 1 rep Max</p>
+<p>This Guide will explain how to access an entire team 1 rep max and 1
+rep power max.</p>
 <div class="section level2">
 <h2 id="set-up-api-token">Set up API Token<a class="anchor" aria-label="anchor" href="#set-up-api-token"></a>
 </h2>
@@ -89,7 +91,50 @@
 <span><span class="co"># or </span></span>
 <span><span class="co"># token &lt;- EF_UpdateTokenTeam(token, 111)</span></span></code></pre></div>
 </div>
-  </main>
+<div class="section level2">
+<h2 id="get-teams-current-1-rep-max">Get Team’s Current 1 Rep Max<a class="anchor" aria-label="anchor" href="#get-teams-current-1-rep-max"></a>
+</h2>
+<p>To gather your Team’s current 1 rep maxes, you will require just the
+token.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Team1RepMax_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/EF_Get1RMs.html">EF_Get1RMs</a></span><span class="op">(</span><span class="va">token</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Team1RepMax_df</span></span>
+<span></span>
+<span><span class="co">#           Date AthleteId     LastName FirstName    Exercise Result</span></span>
+<span><span class="co"># 1     6/8/2023      4342       Player         1       SQUAT    450</span></span>
+<span><span class="co"># 2     5/8/2023      4342       Player         1 POWER CLEAN    302</span></span>
+<span><span class="co"># 3    7/12/2023      4342       Player         1 BENCH PRESS    356</span></span>
+<span><span class="co"># 4    5/28/2024      4343       Player         2       SQUAT    100</span></span>
+<span><span class="co"># 5    5/28/2024      4343       Player         2 POWER CLEAN    100</span></span>
+<span><span class="co"># 6    5/28/2024      4343       Player         2 BENCH PRESS    100</span></span>
+<span><span class="co"># 7    7/27/2025      4344       Player         3       SQUAT    360</span></span>
+<span><span class="co"># 8    5/27/2025      4344       Player         3 POWER CLEAN    314</span></span>
+<span><span class="co"># 9    7/29/2025      4344       Player         3 BENCH PRESS    320</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="get-teams-current-power-1-rep-max">Get Team’s Current Power 1 Rep Max<a class="anchor" aria-label="anchor" href="#get-teams-current-power-1-rep-max"></a>
+</h2>
+<p>To gather your Team’s current power 1 rep maxes, you will require
+just the token.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Power.Team1RepMax_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/EF_GetPower1RMs.html">EF_GetPower1RMs</a></span><span class="op">(</span><span class="va">token</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Power.Team1RepMax_df</span></span>
+<span></span>
+<span><span class="co">#           Date AthleteId     LastName FirstName    Exercise Result</span></span>
+<span><span class="co"># 1     6/8/2023      4342       Player         1       SQUAT    450</span></span>
+<span><span class="co"># 2     5/8/2023      4342       Player         1 POWER CLEAN    302</span></span>
+<span><span class="co"># 3    7/12/2023      4342       Player         1 BENCH PRESS    356</span></span>
+<span><span class="co"># 4    5/28/2024      4343       Player         2       SQUAT    100</span></span>
+<span><span class="co"># 5    5/28/2024      4343       Player         2 POWER CLEAN    100</span></span>
+<span><span class="co"># 6    5/28/2024      4343       Player         2 BENCH PRESS    100</span></span>
+<span><span class="co"># 7    7/27/2025      4344       Player         3       SQUAT    360</span></span>
+<span><span class="co"># 8    5/27/2025      4344       Player         3 POWER CLEAN    314</span></span>
+<span><span class="co"># 9    7/29/2025      4344       Player         3 BENCH PRESS    320</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
