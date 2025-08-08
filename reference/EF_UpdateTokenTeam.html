@@ -66,18 +66,16 @@ Must be saved as the token values ie token &lt;- EF_UpdateTokenTeam(token, 1)</p
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">#Intialize Token</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="co">#Intialize Token</span></span></span>
 <span class="r-in"><span><span class="va">token</span> <span class="op">&lt;-</span> <span class="fu"><a href="EF_CreateAPIToken.html">EF_CreateAPIToken</a></span><span class="op">(</span><span class="st">"https://your.eliteform.com"</span>, <span class="st">"your-api-key"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Get Team ID</span></span></span>
 <span class="r-in"><span><span class="va">Team_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="EF_GetTeamsList.html">EF_GetTeamsList</a></span><span class="op">(</span><span class="va">token</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in curl::curl_fetch_memory(url, handle = handle):</span> Couldn't resolve host name [your.eliteform.com]:</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> Could not resolve host: your.eliteform.com</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Update Token with Team ID</span></span></span>
 <span class="r-in"><span><span class="va">token</span> <span class="op">&lt;-</span> <span class="fu">EF_UpdateTokenTeam</span><span class="op">(</span><span class="va">token</span>, <span class="va">TEAM_ID</span><span class="op">$</span><span class="va">TeamId</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'TEAM_ID' not found</span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
