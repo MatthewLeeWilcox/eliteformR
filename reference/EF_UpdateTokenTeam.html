@@ -71,7 +71,8 @@ Must be saved as the token values ie token &lt;- EF_UpdateTokenTeam(token, 1)</p
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Get Team ID</span></span></span>
 <span class="r-in"><span><span class="va">Team_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="EF_GetTeamsList.html">EF_GetTeamsList</a></span><span class="op">(</span><span class="va">token</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in GET(url = paste0(token@url, "/api/v1/getteamslist"), add_headers(accept = "application",     `X-ApiKey` = token@api_key)):</span> could not find function "GET"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in curl::curl_fetch_memory(url, handle = handle):</span> Couldn't resolve host name [your.eliteform.com]:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Could not resolve host: your.eliteform.com</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Update Token with Team ID</span></span></span>
 <span class="r-in"><span><span class="va">token</span> <span class="op">&lt;-</span> <span class="fu">EF_UpdateTokenTeam</span><span class="op">(</span><span class="va">token</span>, <span class="va">TEAM_ID</span><span class="op">$</span><span class="va">TeamId</span><span class="op">)</span></span></span>
