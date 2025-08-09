@@ -10,7 +10,7 @@ Authors@R: c(
     )
   )
 Description: R Package that acts as an api wrapper for Elite Form API. This package allows for user's to create custom applications and dashboards easier. 
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/MatthewLeeWilcox/eliteformR, https://matthewleewilcox.github.io/eliteformR/
@@ -18,7 +18,8 @@ BugReports: https://github.com/MatthewLeeWilcox/eliteformR/issues
 RoxygenNote: 7.3.2
 Imports: 
     httr,
-    jsonlite
+    jsonlite,
+    methods
 Suggests:
     knitr,
     rmarkdown
