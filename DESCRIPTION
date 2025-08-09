@@ -18,7 +18,8 @@ BugReports: https://github.com/MatthewLeeWilcox/eliteformR/issues
 RoxygenNote: 7.3.2
 Imports: 
     httr,
-    jsonlite
+    jsonlite,
+    methods
 Suggests:
     knitr,
     rmarkdown
